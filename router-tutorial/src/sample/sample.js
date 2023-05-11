@@ -35,27 +35,47 @@ function increase(number) {
   return promise;
 }
 
-increase(0)
-  .then((number) => {
-    console.log(number);
-    return increase(number);
-  })
-  .then((number) => {
-    console.log(number);
-    return increase(number);
-  })
-  .then((number) => {
-    console.log(number);
-    return increase(number);
-  })
-  .then((number) => {
-    console.log(number);
-    return increase(number);
-  })
-  .then((number) => {
-    console.log(number);
-    return increase(number);
-  })
-  .catch((e) => {
+async function runTasks() {
+  try {
+    let result = await increase(0);
+    console.log(result);
+    result = await increase(result);
+    console.log(result);
+    result = await increase(result);
+    console.log(result);
+    result = await increase(result);
+    console.log(result);
+    result = await increase(result);
+    console.log(result);
+    result = await increase(result);
+    console.log(result);
+  } catch (e) {
     console.log(e);
-  });
+  }
+}
+runTasks();
+
+// increase(0)
+//   .then((number) => {
+//     console.log(number);
+//     return increase(number);
+//   })
+//   .then((number) => {
+//     console.log(number);
+//     return increase(number);
+//   })
+//   .then((number) => {
+//     console.log(number);
+//     return increase(number);
+//   })
+//   .then((number) => {
+//     console.log(number);
+//     return increase(number);
+//   })
+//   .then((number) => {
+//     console.log(number);
+//     return increase(number);
+//   })
+//   .catch((e) => {
+//     console.log(e);
+//   });
